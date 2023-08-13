@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  rpi-builder:
+    build: 
+      dockerfile: ./Dockerfile-ubuntu-23.04
+    container_name: rpi-builder
+    volumes:
+      # Create a volume locally to store raspberry linux kernel
+      # mkdir -p ./src
+      - ./src:/src
+    stdin_open: true
+    tty: true
